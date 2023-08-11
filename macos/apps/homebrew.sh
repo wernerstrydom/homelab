@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 set -Eeuo pipefail
-
+# check arch and the paths
 if [ -d "/opt/homebrew/bin/" ] 
 then
     echo "--- Upgrading Homebrew"
