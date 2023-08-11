@@ -3,3 +3,4 @@ echo "Running SUDO"
 sudo -v
 
 . ./apps/xcode.sh
+. ./apps/homebrew.sh
