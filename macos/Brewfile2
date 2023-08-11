@@ -18,10 +18,7 @@ tap "homebrew/services"
 # brew "findutils"
 # brew "gawk"
 # brew "gcc"
-# brew "gh"
-# brew "git-lfs"
-# brew "git-secrets"
-# brew "git"
+
 # brew "gmp"
 # brew "gnu-getopt"
 # brew "gnu-indent"
@@ -52,7 +49,6 @@ brew "mas"
 # brew "gimme-aws-creds"
 # brew "openjdk"
 # brew "openssh"
-# brew "openssl"
 # brew "p7zip"
 # brew "pandoc"
 # brew "pidof"
@@ -95,19 +91,19 @@ cask "1password-cli"
 # cask "dracula-gitkraken"
 # cask "dracula-terminal"
 # cask "firefox"
-# cask "gitkraken"
+cask "gitkraken"
 # cask "google-chrome"
 # cask "iterm2"
-# cask "jetbrains-toolbox"
-# cask "kaleidoscope"
+cask "jetbrains-toolbox"
+cask "kaleidoscope"
 # cask "oracle-jdk"
 # cask "postman"
-# cask "visual-studio-code"
-# cask "powershell"
-# cask "font-source-code-pro"
-# cask "font-ibm-plex"
-# cask "font-consolas-for-powerline"
-# cask "font-anonymice-powerline"
+cask "visual-studio-code"
+cask "powershell"
+cask "font-source-code-pro"
+cask "font-ibm-plex"
+cask "font-consolas-for-powerline"
+cask "font-anonymice-powerline"
 
 # 1482454543  Twitter                        (9.30)
 # 506189836   Harvest                        (2.3.2)
@@ -164,11 +160,22 @@ cask "1password-cli"
 # 475193367   Synalyze It! Pro               (1.32)
 # 494803304   WiFi Explorer                  (3.4.4)
 
+#
+# Shell
+#
+brew "zsh-syntax-highlighting"
+brew "ksh93"
+brew "oksh"
 
 #
 # Development Tools
 #
 mas "Xcode", id: 497799835
+
+brew "gh"
+brew "git-lfs"
+brew "git-secrets"
+brew "git"
 
 #
 # Security
@@ -190,12 +197,7 @@ mas "Microsoft Remote Desktop", id: 1295203466
 #
 # Microsoft Office
 #
-mas "Microsoft Word", id: 462054704
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Outlook", id: 985367838
-mas "Microsoft OneNote", id: 784801555
-mas "Microsoft To Do", id: 1274495053
+
 
 # mas "WhatsApp", id: 1147396723
 # mas "Speedtest", id: 1153157709

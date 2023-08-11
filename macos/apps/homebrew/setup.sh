@@ -1,8 +1,7 @@
 #!/usr/bin/env zsh
 set -Eeuo pipefail
 # check arch and the paths
-if [ -d "/opt/homebrew/bin/" ] 
-then
+if command -v brew >/dev/null 2>&1; then
     echo "--- Upgrading Homebrew"
     brew update
 else
@@ -14,4 +13,6 @@ fi
 # $(brew --prefix)
 grep -qxF "export PATH=$(brew --prefix)/bin:\$PATH" ~/.zshrc || echo "export PATH=$(brew --prefix)/bin:\$PATH" >> ~/.zshrc
 brew upgrade
-brew bundle
+
+PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+brew bundle --file=$PATH/Brewfile
