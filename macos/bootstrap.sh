@@ -2,5 +2,6 @@
 echo "Running SUDO"
 sudo -v
 
-. ./apps/xcode.sh
-. ./apps/homebrew.sh
+. ./apps/xcode-cli/setup.sh
+. ./apps/homebrew/setup.sh
+. ./apps/msoffice/setup.sh
