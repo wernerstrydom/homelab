@@ -164,10 +164,26 @@ brew "mas"
 # 475193367   Synalyze It! Pro               (1.32)
 # 494803304   WiFi Explorer                  (3.4.4)
 
+# 462054704  Microsoft Word                 (16.75)
+# 784801555  Microsoft OneNote              (16.75)
+# 985367838  Microsoft Outlook              (16.75.1)
+# 462058435  Microsoft Excel                (16.75.2)
+# 462062816  Microsoft PowerPoint           (16.75)
+# 1295203466  Microsoft Remote Desktop       (10.8.4)
+
 mas "Xcode", id: 497799835
 mas "1Password", id: 443987910
 mas "iA Writer", id: 775737590
 mas "Slack", id: 803453959
+mas "Remote Desktop", id: 409907375
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Microsoft Word", id: 462054704
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft OneNote", id: 784801555
+mas "Microsoft To Do", id: 1274495053
+
 # mas "WhatsApp", id: 1147396723
 # mas "Speedtest", id: 1153157709
 # mas "Spark", id: 1176895641
