@@ -12,3 +12,4 @@ sudo -v
 . ./apps/ksh/setup.sh
 
 . ./apps/git/setup.sh
+. ./apps/vscode/setup.sh
