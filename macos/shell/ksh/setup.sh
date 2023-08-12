@@ -18,6 +18,7 @@ else
     echo "Oh My Zsh already installed"
 fi
 grep -qxF 'export ZSH=$HOME/.oh-my-zsh' $HOME/.zshenv || echo 'export ZSH=$HOME/.oh-my-zsh' >> $HOME/.zshenv
+source $HOME/.zshenv
 
 # grep -qxF "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" || echo "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
 # sed -i '' '/^plugins=(.*/ s//plugins=\(git python 1password vscode github golang aws ansible zsh-autosuggestions\)/' "$HOME/.zshrc"
