@@ -10,3 +10,5 @@ sudo -v
 . ./apps/python/setup.sh
 . ./apps/github/setup.sh
 . ./apps/ksh/setup.sh
+
+. ./apps/git/setup.sh
