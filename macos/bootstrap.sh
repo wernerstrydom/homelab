@@ -61,5 +61,8 @@ fi
 . ./apps/hazel/setup.sh
 . ./apps/pandoc/setup.sh
 
+echo "--------------------------------------------------------------------------------"
+echo "Setting up Dock"
+echo "--------------------------------------------------------------------------------"
 # System Settings
 . ./system/settings/dock.sh
