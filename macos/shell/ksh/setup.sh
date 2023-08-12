@@ -10,13 +10,7 @@ if [ "$SHELL" != "$HOMEBREW_PATH/bin/ksh" ]; then
     chsh -s $HOMEBREW_PATH/bin/ksh
 fi
 
-if [ -d $HOME/.oh-my-zsh ]; then
-    pushd $HOME/.oh-my-zsh
-    git pull origin
-    popd
-else
-    $HOMEBREW_PATH/bin/ksh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 grep -qxF "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" || echo "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
 
