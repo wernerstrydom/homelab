@@ -43,11 +43,10 @@ fi
 . ./shell/bash/setup.sh
 . ./shell/powershell/setup.sh
 
-. ./apps/terraform/setup.sh
-
 # Development
 . ./development/gitkraken/setup.sh
 . ./development/kaleidoscope/setup.sh
+. ./apps/terraform/setup.sh
 
 # Editors
 . ./apps/nano/setup.sh
