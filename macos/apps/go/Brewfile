@@ -1,0 +1,2 @@
+brew "go"
+brew "go@1.19"

@@ -5,3 +5,5 @@ sudo -v
 . ./apps/xcode-cli/setup.sh
 . ./apps/homebrew/setup.sh
 . ./apps/msoffice/setup.sh
+. ./apps/1password/setup.sh
+. ./apps/go/setup.sh
