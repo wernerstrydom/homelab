@@ -11,6 +11,7 @@ sudo -v
 . ./apps/go/setup.sh
 . ./apps/python/setup.sh
 . ./apps/javascript/setup.sh
+. ./apps/ruby/setup.sh
 
 . ./apps/github/setup.sh
 . ./apps/git/setup.sh
