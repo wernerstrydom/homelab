@@ -66,3 +66,4 @@ echo "Setting up Dock"
 echo "--------------------------------------------------------------------------------"
 # System Settings
 . ./system/settings/dock.sh
+. ./system/settings/terminal.sh
