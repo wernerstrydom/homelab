@@ -49,6 +49,7 @@ fi
 . ./development/terraform/setup.sh
 . ./development/ldb-mi/setup.sh
 . ./development/docker/setup.sh
+. ./development/checkov/setup.sh
 
 # Editors
 . ./apps/nano/setup.sh
