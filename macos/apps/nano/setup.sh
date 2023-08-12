@@ -16,7 +16,7 @@ grep -qxF 'export VISUAL="$EDITOR"' $HOME/.zshenv || echo 'export VISUAL="$EDITO
 touch ~/.nanorc
 grep -qxF "include \"$HOMEBREW_PREFIX/share/nano/*.nanorc\"" ~/.nanorc || echo "include \"$HOMEBREW_PREFIX/share/nano/*.nanorc\"" >> $HOME/.nanorc
 
-git config --global core.editor "$HOMEBREW_PATH/bin/nano"
+git config --global core.editor "$HOMEBREW_PREFIX/bin/nano"
 
 source $HOME/.zshenv
 source $HOME/.zshrc
