@@ -3,3 +3,5 @@ set -Eeuo pipefail
 
 SCRIPT_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 brew bundle --file=$SCRIPT_DIR/Brewfile
+
+echo $(brew --prefix)/bin/pwsh | sudo tee -a /etc/shells
