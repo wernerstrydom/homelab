@@ -10,10 +10,13 @@ else
     export PATH=$(brew --prefix)/bin:$PATH
 fi
 
-grep -qxF "export HOMEBREW_PREFIX=$(brew --prefix)" ~/.zshrc || echo "export HOMEBREW_PREFIX=$(brew --prefix)" >> $HOME/.zshenv
-grep -qxF "export PATH=\$HOMEBREW_PREFIX/bin:\$PATH" ~/.zshrc || echo "export PATH=\$HOMEBREW_PREFIX/bin:\$PATH" >> $HOME/.zshenv
+grep -qxF "export HOMEBREW_PREFIX=$(brew --prefix)" $HOME/.zshenv || echo "export HOMEBREW_PREFIX=$(brew --prefix)" >> $HOME/.zshenv
+grep -qxF 'export PATH=\$HOMEBREW_PREFIX/bin:$PATH' $HOME/.zshenv || echo 'export PATH=$HOMEBREW_PREFIX/bin:$PATH' >> $HOME/.zshenv
 source $HOME/.zshenv
 brew upgrade
 
 SCRIPT_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 brew bundle --file=$SCRIPT_DIR/Brewfile
+
+source $HOME/.zshenv
+source $HOME/.zshrc
