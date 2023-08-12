@@ -10,13 +10,20 @@ else
     export PATH=$(brew --prefix)/bin:$PATH
 fi
 
-grep -qxF "export HOMEBREW_PREFIX=$(brew --prefix)" $HOME/.zshenv || echo "export HOMEBREW_PREFIX=$(brew --prefix)" >> $HOME/.zshenv
-grep -qxF "export PATH=$(brew --prefix)/bin:\$PATH" $HOME/.zshenv || echo "export PATH=$(brew --prefix)/bin:\$PATH" >> $HOME/.zshenv
-source $HOME/.zshenv
+# check if /etc/zshenv exists, if not create it
+if [ ! -f /etc/zshenv ]; then
+    echo "--- Creating /etc/zshenv"
+    sudo touch /etc/zshenv
+fi
+
+# check if /etc/zshenv has the HOMEBREW_PREFIX and PATH variables, if not add them
+grep -qxF "export HOMEBREW_PREFIX=$(brew --prefix)" /etc/zshenv || echo "export HOMEBREW_PREFIX=$(brew --prefix)" | sudo tee -a/etc/zshenv
+grep -qxF "export PATH=$(brew --prefix)/bin:\$PATH" /etc/zshenv || echo "export PATH=$(brew --prefix)/bin:\$PATH" | sudo tee -a/etc/zshenv
+
+source /etc/zshenv
 brew upgrade
 
 SCRIPT_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 brew bundle --file=$SCRIPT_DIR/Brewfile
 
-source $HOME/.zshenv
-source $HOME/.zshrc
+
