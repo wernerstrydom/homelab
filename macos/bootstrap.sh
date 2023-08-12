@@ -2,6 +2,9 @@
 echo "Running SUDO"
 sudo -v
 
+# backup
+. ./backup.sh
+
 # check if DevToolsSecurity status is enabled, if not enable it
 if [[ $(DevToolsSecurity -status) == "disabled" ]]; then
   echo "Enabling Developer mode"
