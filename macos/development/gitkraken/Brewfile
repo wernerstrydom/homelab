@@ -1,1 +1,1 @@
-brew "gitkraken"
+cask "gitkraken"
