@@ -8,3 +8,4 @@ sudo -v
 . ./apps/1password/setup.sh
 . ./apps/go/setup.sh
 . ./apps/python/setup.sh
+. ./apps/gh/setup.sh
