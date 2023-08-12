@@ -12,11 +12,8 @@ else
 fi
 
 grep -qxF "export PATH=$(brew --prefix)/bin:\$PATH" ~/.zshrc || echo "export PATH=$(brew --prefix)/bin:\$PATH" >> ~/.zshrc
-
-brew untap homebrew/core
-brew untap homebrew/cask
-
 brew upgrade
 
 PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+echo "PATH=$PATH"
 brew bundle --file=$PATH/Brewfile
