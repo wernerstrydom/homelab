@@ -9,3 +9,4 @@ sudo -v
 . ./apps/go/setup.sh
 . ./apps/python/setup.sh
 . ./apps/github/setup.sh
+. ./apps/ksh/setup.sh
