@@ -1,0 +1,2 @@
+brew "openjdk"
+cask "oracle-jdk"
