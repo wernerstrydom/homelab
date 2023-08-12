@@ -56,7 +56,7 @@ fi
 . ./development/vscode/setup.sh
 . ./development/jetbrains/setup.sh
 
-
 # Applications
 . ./apps/elgato/setup.sh
 . ./apps/hazel/setup.sh
+. ./apps/pandoc/setup.sh
