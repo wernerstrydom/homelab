@@ -13,3 +13,5 @@ sudo -v
 
 . ./apps/git/setup.sh
 . ./apps/vscode/setup.sh
+. ./apps/jetbrains/setup.sh
+. ./apps/terraform/setup.sh
