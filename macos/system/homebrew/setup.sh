@@ -17,8 +17,8 @@ if [ ! -f /etc/zshenv ]; then
 fi
 
 # check if /etc/zshenv has the HOMEBREW_PREFIX and PATH variables, if not add them
-grep -qxF "export HOMEBREW_PREFIX=$(brew --prefix)" /etc/zshenv || echo "export HOMEBREW_PREFIX=$(brew --prefix)" | sudo tee -a/etc/zshenv
-grep -qxF "export PATH=$(brew --prefix)/bin:\$PATH" /etc/zshenv || echo "export PATH=$(brew --prefix)/bin:\$PATH" | sudo tee -a/etc/zshenv
+grep -qxF "export HOMEBREW_PREFIX=$(brew --prefix)" /etc/zshenv || echo "export HOMEBREW_PREFIX=$(brew --prefix)" | sudo tee -a /etc/zshenv
+grep -qxF "export PATH=$(brew --prefix)/bin:\$PATH" /etc/zshenv || echo "export PATH=$(brew --prefix)/bin:\$PATH" | sudo tee -a /etc/zshenv
 
 source /etc/zshenv
 brew upgrade
