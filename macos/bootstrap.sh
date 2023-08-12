@@ -14,18 +14,23 @@ else
 fi
 
 # Prerequisites
+echo "--------------------------------------------------------------------------------"
+echo "Prerequisites"
+echo "--------------------------------------------------------------------------------"
 . ./development/xcode-cli/setup.sh
 . ./system/homebrew/setup.sh
 . ./system/utils/setup.sh
-
-# Applications
-. ./apps/msoffice/setup.sh
 . ./apps/1password/setup.sh
 
+echo "--------------------------------------------------------------------------------"
+echo "System Tools"
+echo "--------------------------------------------------------------------------------"
 # System Tools
 . ./system/ssh/setup.sh
 
-# Languages
+echo "--------------------------------------------------------------------------------"
+echo "Languages"
+echo "--------------------------------------------------------------------------------"
 . ./lang/c/setup.sh
 . ./lang/go/setup.sh
 . ./lang/python/setup.sh
@@ -34,16 +39,18 @@ fi
 . ./lang/kotlin/setup.sh
 . ./lang/java/setup.sh
 
-# Source Control
-. ./development/github/setup.sh
-. ./development/git/setup.sh
-
-# Shells and Terminals
+echo "--------------------------------------------------------------------------------"
+echo "Shells and Terminals"
+echo "--------------------------------------------------------------------------------"
 . ./shell/ksh/setup.sh
 . ./shell/bash/setup.sh
 . ./shell/powershell/setup.sh
 
-# Development
+echo "--------------------------------------------------------------------------------"
+echo "Development Tools"
+echo "--------------------------------------------------------------------------------"
+. ./development/github/setup.sh
+. ./development/git/setup.sh
 . ./development/gitkraken/setup.sh
 . ./development/kaleidoscope/setup.sh
 . ./development/terraform/setup.sh
@@ -51,19 +58,24 @@ fi
 . ./development/docker/setup.sh
 . ./development/checkov/setup.sh
 
-# Editors
+echo "--------------------------------------------------------------------------------"
+echo "Editors"
+echo "--------------------------------------------------------------------------------"
+
 . ./apps/nano/setup.sh
 . ./development/vscode/setup.sh
 . ./development/jetbrains/setup.sh
 
-# Applications
+echo "--------------------------------------------------------------------------------"
+echo "Applications"
+echo "--------------------------------------------------------------------------------"
 . ./apps/elgato/setup.sh
 . ./apps/hazel/setup.sh
 . ./apps/pandoc/setup.sh
+. ./apps/msoffice/setup.sh
 
 echo "--------------------------------------------------------------------------------"
-echo "Setting up Dock"
+echo "Preferences"
 echo "--------------------------------------------------------------------------------"
-# System Settings
 . ./system/settings/dock.sh
 . ./system/settings/terminal.sh
