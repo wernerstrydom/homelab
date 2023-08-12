@@ -26,8 +26,8 @@ fi
 . ./apps/github/setup.sh
 . ./apps/git/setup.sh
 
-. ./apps/ksh/setup.sh
-. ./apps/bash/setup.sh
+. ./shell/ksh/setup.sh
+. ./shell/bash/setup.sh
 
 . ./apps/terraform/setup.sh
 
