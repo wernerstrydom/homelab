@@ -4,8 +4,8 @@
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use Pro Theme
-defaults write com.apple.terminal "Startup Window Settings" -string "Pro"
-defaults write com.apple.terminal "Default Window Settings" -string "Pro"
+defaults write com.apple.Terminal "Startup Window Settings" -string Pro
+defaults write com.apple.Terminal "Default Window Settings" -string Pro
 
 # Use KSH
 defaults write com.apple.terminal "Shell" -string "$(brew --prefix)/bin/zsh";
