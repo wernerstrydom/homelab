@@ -14,6 +14,5 @@ fi
 grep -qxF "export PATH=$(brew --prefix)/bin:\$PATH" ~/.zshrc || echo "export PATH=$(brew --prefix)/bin:\$PATH" >> ~/.zshrc
 brew upgrade
 
-PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-echo "PATH=$PATH"
-brew bundle --file=$PATH/Brewfile
+SCRIPT_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+brew bundle --file=$SCRIPT_DIR/Brewfile
