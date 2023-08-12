@@ -2,12 +2,21 @@
 echo "Running SUDO"
 sudo -v
 
+# check if DevToolsSecurity status is enabled, if not enable it
+if [[ $(DevToolsSecurity -status) == "disabled" ]]; then
+  echo "Enabling Developer mode"
+  sudo DevToolsSecurity -enable
+else
+  echo "Developer mode is already enabled"
+fi
+
 . ./apps/xcode-cli/setup.sh
 . ./apps/homebrew/setup.sh
 
 . ./apps/msoffice/setup.sh
 . ./apps/1password/setup.sh
 
+. ./apps/c/setup.sh
 . ./apps/go/setup.sh
 . ./apps/python/setup.sh
 . ./apps/javascript/setup.sh
