@@ -16,12 +16,12 @@ fi
 . ./apps/msoffice/setup.sh
 . ./apps/1password/setup.sh
 
-. ./apps/c/setup.sh
-. ./apps/go/setup.sh
-. ./apps/python/setup.sh
-. ./apps/javascript/setup.sh
-. ./apps/ruby/setup.sh
-. ./apps/kotlin/setup.sh
+. ./lang/c/setup.sh
+. ./lang/go/setup.sh
+. ./lang/python/setup.sh
+. ./lang/javascript/setup.sh
+. ./lang/ruby/setup.sh
+. ./lang/kotlin/setup.sh
 
 . ./apps/github/setup.sh
 . ./apps/git/setup.sh
