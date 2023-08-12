@@ -41,6 +41,7 @@ fi
 # Shells and Terminals
 . ./shell/ksh/setup.sh
 . ./shell/bash/setup.sh
+. ./shell/powershell/setup.sh
 
 . ./apps/terraform/setup.sh
 
