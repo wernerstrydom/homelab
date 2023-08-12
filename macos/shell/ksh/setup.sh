@@ -5,9 +5,9 @@ SCRIPT_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 brew bundle --file=$SCRIPT_DIR/Brewfile
 
 HOMEBREW_PREFIX=$(brew --prefix)
-if [ "$SHELL" != "$HOMEBREW_PATH/bin/ksh" ]; then
-    grep -qxF "$HOMEBREW_PATH/bin/ksh" /etc/shells || echo "$HOMEBREW_PATH/bin/ksh" | sudo tee -a /etc/shells
-    chsh -s $HOMEBREW_PATH/bin/ksh
+if [ "$SHELL" != "$HOMEBREW_PREFIX/bin/ksh" ]; then
+    grep -qxF "$HOMEBREW_PREFIX/bin/ksh" /etc/shells || echo "$HOMEBREW_PREFIX/bin/ksh" | sudo tee -a /etc/shells
+    chsh -s $HOMEBREW_PREFIX/bin/ksh
 fi
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
