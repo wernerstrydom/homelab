@@ -60,3 +60,6 @@ fi
 . ./apps/elgato/setup.sh
 . ./apps/hazel/setup.sh
 . ./apps/pandoc/setup.sh
+
+# System Settings
+. ./system/settings/dock.sh
