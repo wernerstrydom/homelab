@@ -16,6 +16,7 @@ fi
 
 . ./apps/msoffice/setup.sh
 . ./apps/1password/setup.sh
+. ./apps/elgato/setup.sh
 
 . ./system/ssh/setup.sh
 
