@@ -16,7 +16,6 @@ fi
 
 . ./apps/msoffice/setup.sh
 . ./apps/1password/setup.sh
-. ./apps/elgato/setup.sh
 
 . ./system/ssh/setup.sh
 
@@ -40,3 +39,5 @@ fi
 . ./apps/vscode/setup.sh
 . ./apps/jetbrains/setup.sh
 
+. ./apps/elgato/setup.sh
+. ./apps/hazel/setup.sh
