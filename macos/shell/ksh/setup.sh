@@ -18,11 +18,10 @@ else
     echo "Oh My Zsh already installed"
 fi
 
-grep -qxF "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" || echo "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
-
-sed -i '' '/^plugins=(.*/ s//plugins=\(git python 1password vscode github golang aws ansible zsh-autosuggestions\)/' "$HOME/.zshrc"
+# grep -qxF "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" || echo "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
+# sed -i '' '/^plugins=(.*/ s//plugins=\(git python 1password vscode github golang aws ansible zsh-autosuggestions\)/' "$HOME/.zshrc"
 
 echo "# ---------------------------------------------------------------------------------------------------------------" >> $HOME/.zshrc
 echo "# Aliases" >> $HOME/.zshrc
 echo "# ---------------------------------------------------------------------------------------------------------------" >> $HOME/.zshrc
-cat $SCRIPT_DIR/../../alias >> $HOME/.zshrc
+# cat $SCRIPT_DIR/../../alias >> $HOME/.zshrc
