@@ -48,4 +48,8 @@ defaults write com.apple.dock autohide -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
+# Set Dock Orientation to left
+defaults write com.apple.dock "orientation" -string "left"
+
+
 killall "Dock" &> /dev/null
