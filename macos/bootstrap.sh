@@ -12,9 +12,12 @@ fi
 
 . ./apps/xcode-cli/setup.sh
 . ./apps/homebrew/setup.sh
+. ./apps/system/utils/setup.sh
 
 . ./apps/msoffice/setup.sh
 . ./apps/1password/setup.sh
+
+. ./apps/system/ssh/setup.sh
 
 . ./lang/c/setup.sh
 . ./lang/go/setup.sh

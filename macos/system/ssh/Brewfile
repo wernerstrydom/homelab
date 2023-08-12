@@ -1,0 +1,2 @@
+brew "openssh"
+brew "ssh-copy-id"
