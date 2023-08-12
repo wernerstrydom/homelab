@@ -1,6 +1,12 @@
 #!/usr/bin/env ksh
 set -Eeuo pipefail
 
+# check if /usr/local/bin/ldb-mi exists, if it does not, then install it
+if [[ -f /usr/local/bin/ldb-mi ]]; then
+  echo "ldb-mi is already installed"
+  exit 0
+fi
+
 if [[ $(uname -m) == "arm64" ]]; then
   echo "Downloading ARM64 version of ldb-mi"
   URL="https://go.microsoft.com/fwlink/?linkid=2189794"
