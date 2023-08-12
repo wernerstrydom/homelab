@@ -14,8 +14,8 @@ else
 fi
 
 # Prerequisites
-. ./apps/xcode-cli/setup.sh
-. ./apps/homebrew/setup.sh
+. ./development/xcode-cli/setup.sh
+. ./system/homebrew/setup.sh
 . ./system/utils/setup.sh
 
 # Applications
@@ -51,8 +51,8 @@ fi
 
 # Editors
 . ./apps/nano/setup.sh
-. ./apps/vscode/setup.sh
-. ./apps/jetbrains/setup.sh
+. ./development/vscode/setup.sh
+. ./development/jetbrains/setup.sh
 
 
 # Applications
