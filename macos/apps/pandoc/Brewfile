@@ -1,1 +1,3 @@
-brew "gh"
+brew "pandoc"
+brew "pandoc-crossref"
+brew "pandoc-include-code"
