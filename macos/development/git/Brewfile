@@ -1,3 +1,4 @@
+brew "git"
 brew "git-lfs"
 brew "git-secrets"
-brew "git"
+brew "git-xargs"
