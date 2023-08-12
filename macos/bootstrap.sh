@@ -35,8 +35,8 @@ fi
 . ./lang/java/setup.sh
 
 # Source Control
-. ./apps/github/setup.sh
-. ./apps/git/setup.sh
+. ./development/github/setup.sh
+. ./development/git/setup.sh
 
 # Shells and Terminals
 . ./shell/ksh/setup.sh
@@ -46,7 +46,8 @@ fi
 # Development
 . ./development/gitkraken/setup.sh
 . ./development/kaleidoscope/setup.sh
-. ./apps/terraform/setup.sh
+. ./development/terraform/setup.sh
+. ./development/ldb-mi/setup.sh
 
 # Editors
 . ./apps/nano/setup.sh
