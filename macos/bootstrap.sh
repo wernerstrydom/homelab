@@ -48,6 +48,7 @@ fi
 . ./development/kaleidoscope/setup.sh
 . ./development/terraform/setup.sh
 . ./development/ldb-mi/setup.sh
+. ./development/docker/setup.sh
 
 # Editors
 . ./apps/nano/setup.sh
