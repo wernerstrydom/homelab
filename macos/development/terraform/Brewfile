@@ -1,1 +1,5 @@
 brew "terraform"
+brew "terraform-docs"
+brew "terraformer"
+brew "tflint"
+brew "tfsec"
