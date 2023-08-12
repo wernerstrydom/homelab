@@ -22,6 +22,7 @@ fi
 . ./lang/javascript/setup.sh
 . ./lang/ruby/setup.sh
 . ./lang/kotlin/setup.sh
+. ./lang/ldb-mi/setup.sh
 
 . ./apps/github/setup.sh
 . ./apps/git/setup.sh
