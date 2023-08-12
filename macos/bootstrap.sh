@@ -46,12 +46,13 @@ fi
 
 # Development
 . ./development/gitkraken/setup.sh
+. ./development/kaleidoscope/setup.sh
 
 # Editors
-
 . ./apps/nano/setup.sh
 . ./apps/vscode/setup.sh
 . ./apps/jetbrains/setup.sh
+
 
 # Applications
 . ./apps/elgato/setup.sh
