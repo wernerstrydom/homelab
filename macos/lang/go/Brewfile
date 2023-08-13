@@ -1,4 +1,6 @@
 tap "goreleaser/tap"
 brew "go"
+brew "go@1.18"
 brew "go@1.19"
+brew "go@1.20"
 brew "goreleaser/tap/goreleaser"
