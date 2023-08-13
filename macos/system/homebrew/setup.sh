@@ -9,7 +9,7 @@ else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo 'eval $(brew shellenv)' > /Users/homefolder/.zprofile
+echo 'eval $(brew shellenv)' > $HOME/.zprofile
 eval $(brew shellenv)
 
 brew upgrade
