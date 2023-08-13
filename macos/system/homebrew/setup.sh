@@ -8,6 +8,17 @@ then
 else
     echo "--- Homebrew already installed"
 fi
+
+# Updating Paths
+echo "$(brew --prefix)/bin" > paths
+echo "$(brew --prefix)/sbin" >> paths
+cat /etc/paths >> paths
+cat paths | uniq > /etc/paths
+
+# sudo mv /etc/paths /etc/paths.bak
+# sudo mv paths /etc/paths
+
+
 brew shellenv > $HOME/.zshrc
 source $HOME/.zshrc
 
