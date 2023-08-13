@@ -11,12 +11,12 @@ fi
 
 # check if .homebew.zsh exists
 if [ ! -f $HOME/.homebrew.zsh ]; then
-  echo 'eval $(brew shellenv)' >> $HOME/.homebrew.zsh
+  echo "eval $(brew shellenv)" >> $HOME/.homebrew.zsh
 fi
 
 # check if .homebrew.zsh is sourced in .zshrc
-if ! grep -qxF "source $HOME/.homebrew.zsh" $HOME/.zshrc; then
-  echo "source $HOME/.homebrew.zsh" >> $HOME/.zshrc
+if ! grep -qxF "source \$HOME/.homebrew.zsh" $HOME/.zshrc; then
+  echo "source \$HOME/.homebrew.zsh" >> $HOME/.zshrc
 fi
 
 eval $(brew shellenv)
