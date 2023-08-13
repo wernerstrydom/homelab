@@ -8,7 +8,7 @@ then
 else
     echo "--- Homebrew already installed"
 fi
-echo "eval $(brew shellenv)" > $HOME/.zshrc
+brew shellenv > $HOME/.zshrc
 source $HOME/.zshrc
 
 ## check if .homebew.zsh exists
