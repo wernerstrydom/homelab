@@ -8,20 +8,22 @@ then
 else
     echo "--- Homebrew already installed"
 fi
+echo "eval $(brew shellenv)" > $HOME/.zshrc
+source $HOME/.zshrc
 
-# check if .homebew.zsh exists
-if [ ! -f $HOME/.homebrew.zsh ]; then
-  echo "eval $(brew shellenv)" >> $HOME/.homebrew.zsh
-fi
-
-# check if .homebrew.zsh is sourced in .zshrc
-if ! grep -qxF "source \$HOME/.homebrew.zsh" $HOME/.zshrc; then
-  echo "source \$HOME/.homebrew.zsh" >> $HOME/.zshrc
-fi
-
-eval $(brew shellenv)
-
-brew upgrade
+## check if .homebew.zsh exists
+#if [ ! -f $HOME/.homebrew.zsh ]; then
+#  echo "eval $(brew shellenv)" >> $HOME/.homebrew.zsh
+#fi
+#
+## check if .homebrew.zsh is sourced in .zshrc
+#if ! grep -qxF "source \$HOME/.homebrew.zsh" $HOME/.zshrc; then
+#  echo "source \$HOME/.homebrew.zsh" >> $HOME/.zshrc
+#fi
+#
+#eval $(brew shellenv)
+#
+#brew upgrade
 
 
 # check if we're running on arm64 or x86_64
