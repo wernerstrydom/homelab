@@ -19,10 +19,10 @@ echo "Prerequisites"
 echo "--------------------------------------------------------------------------------"
 . ./development/xcode-cli/setup.sh
 . ./system/homebrew/setup.sh
+exit 0
+
 . ./system/utils/setup.sh
 . ./apps/1password/setup.sh
-
-exit 0
 
 echo "--------------------------------------------------------------------------------"
 echo "System Tools"
