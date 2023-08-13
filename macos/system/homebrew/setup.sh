@@ -9,7 +9,11 @@ else
     echo "--- Homebrew already installed"
 fi
 
-brew shellenv
+<<< $(brew shellenv) < $HOME/.zshrc | sponge $HOME/.zshrc
+
+source $HOME/.zshrc
+
+# echo 'eval $(brew shellenv)' >> $HOME/.zshrc
 
 # check if we're running on arm64 or x86_64
 # if [[ $(uname -m) == "arm64" ]]; then
