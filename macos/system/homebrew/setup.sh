@@ -58,9 +58,20 @@ fi
 # ---------------------------------------------------------------------------
 echo "--- Setting Profiles"
 
+# check if ~/.zshrc exists
+if [ ! -f ~/.zshrc ]; then
+  echo "--- Creating ~/.zshrc"
+  touch ~/.zshrc
+fi
+
 # check if $HOMEBREW_PREFIX/bin exists in ~/.zshrc, and if not, add it to ~/.zshrc
 if ! grep -qxF "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" ~/.zshrc; then
   echo "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" >> ~/.zshrc
+fi
+
+if [ ! -f ~/.bashrc ]; then
+  echo "--- Creating ~/.bashrc"
+  touch ~/.bashrc
 fi
 
 # check if $HOMEBREW_PREFIX/bin exists in ~/.bashrc, and if not, add it to ~/.bashrc
