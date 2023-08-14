@@ -16,6 +16,12 @@ else
   echo "--- Homebrew already installed"
 fi
 
+# ---------------------------------------------------------------------------
+# Update Global Paths
+#
+# This allows anyone logged in to use homebrew
+# ---------------------------------------------------------------------------
+
 # create a temporary file to store paths
 touch paths
 
@@ -47,5 +53,19 @@ else
   echo "--- /etc/paths already up to date"
 fi
 
-# ensure this environment is up to date
-eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+# ---------------------------------------------------------------------------
+# Setting Profiles  (zshrc, bashrc, etc)
+# ---------------------------------------------------------------------------
+echo "--- Setting Profiles"
+
+# check if $HOMEBREW_PREFIX/bin exists in ~/.zshrc, and if not, add it to ~/.zshrc
+if ! grep -qxF "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" ~/.zshrc; then
+  echo "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" >> ~/.zshrc
+fi
+
+# check if $HOMEBREW_PREFIX/bin exists in ~/.bashrc, and if not, add it to ~/.bashrc
+if ! grep -qxF "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" ~/.bashrc; then
+  echo "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" >> ~/.bashrc
+fi
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
