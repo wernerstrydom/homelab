@@ -5,8 +5,17 @@ SCRIPT_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 brew bundle --file=$SCRIPT_DIR/Brewfile
 
 HOMEBREW_PREFIX=$(brew --prefix)
+
+# check if zsh is already in /etc/shells
+if grep -Fxq "$HOMEBREW_PREFIX/bin/zsh" /etc/shells
+then
+    echo "zsh is already in /etc/shells"
+else
+    echo "zsh is not in /etc/shells"
+    echo $HOMEBREW_PREFIX/bin/zsh | sudo tee -a /etc/shells
+fi
+
 if [ "$SHELL" != "$HOMEBREW_PREFIX/bin/zsh" ]; then
-    grep -qxF "$HOMEBREW_PREFIX/bin/zsh" /etc/shells || echo "$HOMEBREW_PREFIX/bin/zsh" | sudo tee -a /etc/shells
     chsh -s $HOMEBREW_PREFIX/bin/zsh
 fi
 
@@ -17,13 +26,15 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
 else
     echo "Oh My Zsh already installed"
 fi
-grep -qxF 'export ZSH=$HOME/.oh-my-zsh' $HOME/.zshenv || echo 'export ZSH=$HOME/.oh-my-zsh' >> $HOME/.zshenv
+# grep -qxF 'export ZSH=$HOME/.oh-my-zsh' $HOME/.zshenv || echo 'export ZSH=$HOME/.oh-my-zsh' >> $HOME/.zshenv
 source $HOME/.zshenv
 
-# grep -qxF "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" || echo "source \$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
-# sed -i '' '/^plugins=(.*/ s//plugins=\(git python 1password vscode github golang aws ansible zsh-autosuggestions\)/' "$HOME/.zshrc"
+# comment out the line that starts with plugins= in ~/.zshrc
+sed -i '' 's/^plugins=/# plugins=/g' $HOME/.zshrc
 
-# echo "# ---------------------------------------------------------------------------------------------------------------" >> $HOME/.zshrc
-# echo "# Aliases" >> $HOME/.zshrc
-# echo "# ---------------------------------------------------------------------------------------------------------------" >> $HOME/.zshrc
-# cat $SCRIPT_DIR/../../alias >> $HOME/.zshrc
+# add plugins to ~/.zshrc with ) being on a newline
+echo "plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)" >> $HOME/.zshrc
