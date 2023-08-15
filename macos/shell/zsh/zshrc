@@ -22,4 +22,6 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U compinit; compinit
 
+[[ -f ~/.aliases ]] && source ~/.aliases
+
 ### Added by bootstrap.sh ###
