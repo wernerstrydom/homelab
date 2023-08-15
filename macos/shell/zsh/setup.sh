@@ -27,8 +27,10 @@ else
 fi
 
 rm $HOME/.zshrc
-cp $SCRIPT_DIR/zshrc $HOME/.zshrc
+echo "# Homebrew" >> ~/.zshrc
+echo "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" >> ~/.zshrc
 
-if ! grep -qxF "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" ~/.zshrc; then
-  echo "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" >> ~/.zshrc
-fi
+# append zshrc to ~/.zshrc
+cat $SCRIPT_DIR/zshrc >> ~/.zshrc
+
+

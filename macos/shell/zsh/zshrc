@@ -24,4 +24,9 @@ autoload -U compinit; compinit
 
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/highlighters
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ### Added by bootstrap.sh ###
