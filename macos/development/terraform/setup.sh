@@ -18,3 +18,11 @@ provider_installation {
 }
 EOF
 fi
+
+if grep -Fxq "  terraform" ~/.zshrc
+then
+    echo "terraform is already in ~/.zshrc"
+else
+    echo "terraform is not in ~/.zshrc"
+    sed -i '' 's/plugins=(/plugins=(\n  terraform/' ~/.zshrc
+fi
