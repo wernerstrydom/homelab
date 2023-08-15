@@ -15,3 +15,5 @@ else
     sed -i '' 's/plugins=(/plugins=(\n  1password/' ~/.zshrc
 fi
 
+echo "source ~/.config/op/plugins.sh" >> ~/.zshrc && source ~/.zshrc
+
