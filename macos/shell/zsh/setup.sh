@@ -27,4 +27,4 @@ else
 fi
 
 rm $HOME/.zshrc
-cp $SCRIPT_DIR/.zshrc $HOME/.zshrc
+cp $SCRIPT_DIR/zshrc $HOME/.zshrc
