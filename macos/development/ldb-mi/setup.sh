@@ -1,4 +1,4 @@
-#!/usr/bin/env ksh
+#!/usr/bin/env zsh
 set -Eeuo pipefail
 
 # check if /usr/local/bin/ldb-mi exists, if it does not, then install it

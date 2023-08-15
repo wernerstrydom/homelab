@@ -1,4 +1,4 @@
-#!/usr/bin/env ksh
+#!/usr/bin/env zsh
 set -Eeuo pipefail
 
 # Turn on automatic checking for updates
