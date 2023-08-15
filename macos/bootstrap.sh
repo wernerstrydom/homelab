@@ -5,7 +5,24 @@ sudo -v
 # backup
 . ./backup.sh
 
-# check if DevToolsSecurity status is enabled, if not enable it
+echo "--------------------------------------------------------------------------------"
+echo "Installing Rosetta"
+echo "--------------------------------------------------------------------------------"
+if [[ $(uname -m) == "arm64" ]]; then
+  if [[ ! -f "/Library/Apple/System/Library/LaunchDaemons/com.apple.oahd.plist" ]]; then
+    echo "Installing Rosetta"
+    sudo softwareupdate --install-rosetta --agree-to-license
+  else
+    echo "Rosetta already installed"
+  fi
+else
+  echo "Not running on arm64, skipping Rosetta"
+fi
+
+# enable developer mode
+echo "--------------------------------------------------------------------------------"
+echo "Enabling Developer mode"
+echo "--------------------------------------------------------------------------------"
 if [[ $(DevToolsSecurity -status) == "disabled" ]]; then
   echo "Enabling Developer mode"
   sudo DevToolsSecurity -enable
