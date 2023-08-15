@@ -8,7 +8,7 @@ HOMEBREW_PREFIX=$(brew --prefix)
 
 brew unlink nano && brew link nano
 
-grep -qxF 'alias nano=$HOMEBREW_PREFIX/bin/nano' ~/.zshrc || echo 'alias nano=$HOMEBREW_PREFIX/bin/nano' >> ~/.zshrc
+grep -qxF 'alias nano=$HOMEBREW_PREFIX/bin/nano' ~/.aliases || echo 'alias nano=$HOMEBREW_PREFIX/bin/nano' >> ~/.aliases
 grep -qxF 'export EDITOR=$HOMEBREW_PREFIX/bin/nano' $HOME/.zshenv || echo 'export EDITOR=$HOMEBREW_PREFIX/bin/nano' >> $HOME/.zshenv
 grep -qxF 'export VISUAL="$EDITOR"' $HOME/.zshenv || echo 'export VISUAL="$EDITOR"' >> $HOME/.zshenv
 
