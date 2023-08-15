@@ -7,7 +7,7 @@ brew bundle --file=$SCRIPT_DIR/Brewfile
 HOMEBREW_PREFIX=$(brew --prefix)
 
 # add 1password to oh-my-zsh plugins
-if grep -Fxq "1password" ~/.zshrc
+if grep -Fxq "  1password" ~/.zshrc
 then
     echo "1password is already in ~/.zshrc"
 else
