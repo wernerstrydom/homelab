@@ -6,10 +6,13 @@ brew bundle --file=$SCRIPT_DIR/Brewfile
 
 HOMEBREW_PREFIX=$(brew --prefix)
 
-# add 1password to plugins in ~/.zshrc. The plugins line should may look like this:
-# plugins=(
-#   git
-#   zsh-syntax-highlighting
-# )
-# and we want to add 1password to the end of the list
-sed -i '' 's/plugins=(/plugins=(\n  1password\n/' ~/.zshrc
+# extract the list of plugins from ~/.zshrc
+plugins=$(grep -oP '(?<=plugins=\().*(?=\))' ~/.zshrc)
+
+# check if 1password plugin is already in the list of plugins
+if [[ $plugins == *"1password"* ]]; then
+    echo "1password plugin is already in the list of plugins"
+else
+    echo "1password plugin is not in the list of plugins"
+    sed -i '' 's/plugins=(/plugins=(\n  1password /' ~/.zshrc
+fi
