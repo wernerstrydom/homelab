@@ -75,6 +75,7 @@ echo "--------------------------------------------------------------------------
 . ./apps/hazel/setup.sh
 . ./apps/pandoc/setup.sh
 . ./apps/msoffice/setup.sh
+. ./apps/fusion-360/setup.sh
 
 echo "--------------------------------------------------------------------------------"
 echo "Preferences"
