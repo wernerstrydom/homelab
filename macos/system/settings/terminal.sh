@@ -8,7 +8,7 @@ defaults write com.apple.Terminal "Startup Window Settings" -string Pro
 defaults write com.apple.Terminal "Default Window Settings" -string Pro
 
 # Use KSH
-defaults write com.apple.terminal "Shell" -string "$(brew --prefix)/bin/ksh";
+defaults write com.apple.terminal "Shell" -string "$(brew --prefix)/bin/zsh";
 
 # Enable Secure Keyboard Entry in Terminal.app
 # See: https://security.stackexchange.com/a/47786/8918
