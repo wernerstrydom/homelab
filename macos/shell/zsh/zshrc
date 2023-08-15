@@ -72,7 +72,7 @@ COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  osx
+  macos
 )
 
 source $ZSH/oh-my-zsh.sh
