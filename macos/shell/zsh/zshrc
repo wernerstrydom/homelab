@@ -1,0 +1,23 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load.
+ZSH_THEME="robbyrussell"
+
+# Enable Correction
+ENABLE_CORRECTION="true"
+
+# Completion waiting dots
+COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+
+# Plugins
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+# User configuration
+source $ZSH/oh-my-zsh.sh
+
+autoload -U compinit; compinit

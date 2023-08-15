@@ -19,22 +19,12 @@ if [ "$SHELL" != "$HOMEBREW_PREFIX/bin/zsh" ]; then
     chsh -s $HOMEBREW_PREFIX/bin/zsh
 fi
 
-
 if [ ! -d $HOME/.oh-my-zsh ]; then
     echo "Installing Oh My Zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
     echo "Oh My Zsh already installed"
 fi
-# grep -qxF 'export ZSH=$HOME/.oh-my-zsh' $HOME/.zshenv || echo 'export ZSH=$HOME/.oh-my-zsh' >> $HOME/.zshenv
-source $HOME/.zshenv
 
-# comment out the line that starts with plugins= in ~/.zshrc
-sed -i '' 's/^plugins=/# plugins=/g' $HOME/.zshrc
-
-# add plugins to ~/.zshrc with ) being on a newline
-echo "plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)" >> $HOME/.zshrc
+rm $HOME/.zshrc
+cp $SCRIPT_DIR/.zshrc $HOME/.zshrc
