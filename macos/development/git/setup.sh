@@ -11,3 +11,12 @@ USERNAME=`id -F`
 EMAIL=$(defaults read MobileMeAccounts Accounts | grep AccountID | cut -d \" -f2)
 git config --global user.name "$USERNAME"
 git config --global user.email "$EMAIL"
+
+# add docker to oh-my-zsh plugins
+if grep -Fxq "  git" ~/.zshrc
+then
+    echo "git is already in ~/.zshrc"
+else
+    echo "git is not in ~/.zshrc"
+    sed -i '' 's/plugins=(/plugins=(\n  git/' ~/.zshrc
+fi
