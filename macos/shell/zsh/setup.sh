@@ -28,3 +28,7 @@ fi
 
 rm $HOME/.zshrc
 cp $SCRIPT_DIR/zshrc $HOME/.zshrc
+
+if ! grep -qxF "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" ~/.zshrc; then
+  echo "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" >> ~/.zshrc
+fi
