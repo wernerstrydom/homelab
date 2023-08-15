@@ -4,7 +4,7 @@ set -Eeuo pipefail
 SCRIPT_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 # Create a backup directory, with the date and time as the name
-BACKUP_DIR=$SCRIPT_DIR/backup/$(date "+%Y-%m-%d-%H-%M-%S")
+BACKUP_DIR=$HOME/backup/$(date "+%Y-%m-%d-%H-%M-%S")
 mkdir -p $BACKUP_DIR
 
 # Backup the Homebrew
