@@ -6,7 +6,8 @@ brew bundle --file=$SCRIPT_DIR/Brewfile
 
 alias python=$(brew --prefix)/bin/python3
 alias python3=$(brew --prefix)/bin/python3
-grep -qxF "alias python=$(brew --prefix)/bin/python3" ~/.zshrc || echo "alias python=$(brew --prefix)/bin/python3" >> ~/.zshrc
-grep -qxF "alias pip=$(brew --prefix)/bin/pip3" ~/.zshrc || echo "alias pip=$(brew --prefix)/bin/pip3" >> ~/.zshrc
+
+grep -qxF 'alias python=$HOMEBREW_PREFIX/bin/python3' ~/.aliases || echo 'alias python=$HOMEBREW_PREFIX/bin/python3' >> ~/.aliases
+grep -qxF 'alias pip=$HOMEBREW_PREFIX/bin/pip3' ~/.aliases || echo 'alias pip=$(brew --prefix)/bin/pip3' >> ~/.aliases
 
 python3 -m pip install --upgrade pip
