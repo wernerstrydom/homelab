@@ -66,7 +66,8 @@ echo "--------------------------------------------------------------------------
 for lang in ./lang/*/; do
   if [ -f "$lang/setup.sh" ]; then
     name=$(basename $lang)
-    print -r - ${(l[3][-]r[COLUMNS-3][-])name}
+    name="--- $name "
+    print -r - ${(l(COLUMNS)(-))name)}
     . $lang/setup.sh
   fi
 done
