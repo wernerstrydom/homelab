@@ -17,8 +17,9 @@ fi
 
 mkdir -p ~/.config/op
 chmod 700 ~/.config/op
-touch ~/.config/op/config
-chmod 600 ~/.config/op/config
+if [ !-f ~/.config/op/config ]; then
+    eval $(op signin)
+fi
 touch ~/.config/op/plugins.sh
 chmod 600 ~/.config/op/plugins.sh
 echo "source ~/.config/op/plugins.sh" >> ~/.zshrc && source ~/.zshrc
