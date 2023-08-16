@@ -139,3 +139,9 @@ for script in "${scripts[@]}"; do
   . ./system/settings/$script.sh
 done
 
+killall Finder  &> /dev/null
+killall Dock  &> /dev/null
+
+
+
+
