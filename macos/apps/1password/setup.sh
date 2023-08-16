@@ -16,8 +16,11 @@ else
 fi
 
 mkdir -p ~/.config/op
+chmod 700 ~/.config/op
 touch ~/.config/op/config
+chmod 600 ~/.config/op/config
 touch ~/.config/op/plugins.sh
+chmod 600 ~/.config/op/plugins.sh
 echo "source ~/.config/op/plugins.sh" >> ~/.zshrc && source ~/.zshrc
 
 # add 1password to ~/.ssh/config if it doesn't exist
