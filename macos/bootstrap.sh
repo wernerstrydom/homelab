@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 echo "Running SUDO"
 sudo -v
 
@@ -62,20 +63,10 @@ echo "--------------------------------------------------------------------------
 echo "--------------------------------------------------------------------------------"
 echo "Languages"
 echo "--------------------------------------------------------------------------------"
-#. ./lang/c/setup.sh
-#. ./lang/go/setup.sh
-#. ./lang/python/setup.sh
-#. ./lang/javascript/setup.sh
-#. ./lang/ruby/setup.sh
-#. ./lang/kotlin/setup.sh
-#. ./lang/java/setup.sh
-#. ./lang/dotnet/setup.sh
-
-# iterate through every directory in the lang directory, and run the setup.sh script
-# if it exists
 for lang in ./lang/*/; do
   if [ -f "$lang/setup.sh" ]; then
-    echo "--- $lang"
+    name=$(basename $lang)
+    print -r - ${(l[COLUMNS/2][-]r[COLUMNS-COLUMNS/2][-])name}
     . $lang/setup.sh
   fi
 done
