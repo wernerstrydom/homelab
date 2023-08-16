@@ -93,6 +93,7 @@ echo "--------------------------------------------------------------------------
 . ./apps/pandoc/setup.sh
 . ./apps/msoffice/setup.sh
 . ./apps/fusion-360/setup.sh
+. ./apps/logitech/setup.sh
 
 echo "--------------------------------------------------------------------------------"
 echo "Security"
