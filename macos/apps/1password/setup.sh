@@ -17,7 +17,7 @@ fi
 
 mkdir -p ~/.config/op
 chmod 700 ~/.config/op
-if [ !-f ~/.config/op/config ]; then
+if [ ! -f ~/.config/op/config ]; then
     eval $(op signin)
 fi
 touch ~/.config/op/plugins.sh
