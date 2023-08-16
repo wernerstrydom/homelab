@@ -38,6 +38,11 @@ echo "--------------------------------------------------------------------------
 . ./system/homebrew/setup.sh
 
 echo "--------------------------------------------------------------------------------"
+echo "Fonts"
+echo "--------------------------------------------------------------------------------"
+. ./fonts/setup.sh
+
+echo "--------------------------------------------------------------------------------"
 echo "Shells and Terminals"
 echo "--------------------------------------------------------------------------------"
 . ./shell/zsh/setup.sh
@@ -54,18 +59,26 @@ echo "Utilities"
 echo "--------------------------------------------------------------------------------"
 . ./system/utils/setup.sh
 
-
 echo "--------------------------------------------------------------------------------"
 echo "Languages"
 echo "--------------------------------------------------------------------------------"
-. ./lang/c/setup.sh
-. ./lang/go/setup.sh
-. ./lang/python/setup.sh
-. ./lang/javascript/setup.sh
-. ./lang/ruby/setup.sh
-. ./lang/kotlin/setup.sh
-. ./lang/java/setup.sh
-. ./lang/dotnet/setup.sh
+#. ./lang/c/setup.sh
+#. ./lang/go/setup.sh
+#. ./lang/python/setup.sh
+#. ./lang/javascript/setup.sh
+#. ./lang/ruby/setup.sh
+#. ./lang/kotlin/setup.sh
+#. ./lang/java/setup.sh
+#. ./lang/dotnet/setup.sh
+
+# iterate through every directory in the lang directory, and run the setup.sh script
+# if it exists
+for lang in ./lang/*/; do
+  if [ -f "$lang/setup.sh" ]; then
+    echo "--- $lang"
+    . $lang/setup.sh
+  fi
+done
 
 echo "--------------------------------------------------------------------------------"
 echo "Development Tools"
@@ -104,10 +117,7 @@ echo "--------------------------------------------------------------------------
 # applications
 . ./apps/1password/setup.sh
 
-echo "--------------------------------------------------------------------------------"
-echo "Fonts"
-echo "--------------------------------------------------------------------------------"
-. ./fonts/setup.sh
+
 
 echo "--------------------------------------------------------------------------------"
 echo "Preferences"
