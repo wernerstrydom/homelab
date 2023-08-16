@@ -25,7 +25,7 @@ chmod 600 ~/.config/op/plugins.sh
 echo "source ~/.config/op/plugins.sh" >> ~/.zshrc && source ~/.zshrc
 
 # add 1password to ~/.ssh/config if it doesn't exist
-if grep -Fxq "2BUA8C4S2C\.com\.1password" ~/.ssh/config
+if grep -q "1password" ~/.ssh/config
 then
     echo "1Password is already in ~/.ssh/config"
 else
