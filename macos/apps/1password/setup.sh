@@ -25,12 +25,12 @@ chmod 600 ~/.config/op/plugins.sh
 echo "source ~/.config/op/plugins.sh" >> ~/.zshrc && source ~/.zshrc
 
 # add 1password to ~/.ssh/config if it doesn't exist
-if grep -Fxq "2BUA8C4S2C.com.1password" ~/.ssh/config
+if grep -Fxq "2BUA8C4S2C\.com\.1password" ~/.ssh/config
 then
     echo "1Password is already in ~/.ssh/config"
 else
     echo "1Password is not in ~/.ssh/config"
-    echo << EOF >> ~/.ssh/config
+    cat <<EOF >> ~/.ssh/config
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 EOF
