@@ -182,7 +182,6 @@ mas "Debit & Credit", id: 882637653
 mas "Developer", id: 640199958
 mas "Due", id: 524373870
 mas "eDrawings", id: 1209754386
-mas "FlipClock", id: 1181028777
 mas "Fontcase", id: 403095673
 mas "FUJIFILM Prints & Gifts", id: 1316083518
 mas "Gemini", id: 463541543

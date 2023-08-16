@@ -1,0 +1,8 @@
+cask "qlcolorcode"
+cask "qlstephen"
+cask "qlmarkdown"
+cask "quicklook-json"
+cask "qlprettypatch"
+cask "quicklook-csv"
+cask "webpquicklook"
+cask "suspicious-package"

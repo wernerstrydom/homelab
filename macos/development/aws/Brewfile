@@ -1,0 +1,2 @@
+brew "aws-cdk"
+brew "awscli"

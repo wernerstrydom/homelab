@@ -1,0 +1,3 @@
+mas "VMware Remote Console", id: 1230249825
+brew "govc"
+cask "vmware-fusion"

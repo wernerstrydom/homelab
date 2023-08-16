@@ -34,26 +34,10 @@ function setup_dir {
     return 1
   fi
 
-  # check if there's an exclude argument
-  exclude=()
-  if [ -n "$2" ]; then
-    if [ "$2" == "--exclude" ]; then
-      shift
-      shift
-      exclude=("$@")
-    fi
-  fi
-
   # iterate over all the directories in the given path
   for dir in "$1"/*/; do
     # get the name of the directory
     dir_name=$(basename "$dir")
-
-    # check if the directory is in the exclude list
-    if [[ " ${exclude[@]} " =~ " ${dir_name} " ]]; then
-      echo "Skipping $dir_name"
-      continue
-    fi
 
     # check if the directory has a setup.sh script
     if [ -f "$dir/setup.sh" ]; then
@@ -61,9 +45,7 @@ function setup_dir {
       . "$dir/setup.sh"
     fi
   done
-
   return 0
-
 }
 
 echo "Running SUDO"
@@ -119,7 +101,7 @@ echo "--------------------------------------------------------------------------
 echo "System Tools"
 echo "--------------------------------------------------------------------------------"
 # install everything in system except for settings and homebrew
-setup_dir ./system --exclude "settings" "homebrew"
+setup_dir ./system
 
 echo "--------------------------------------------------------------------------------"
 echo "Languages"
@@ -139,12 +121,12 @@ setup_dir ./editors
 echo "--------------------------------------------------------------------------------"
 echo "Applications"
 echo "--------------------------------------------------------------------------------"
-setup_dir ./apps --exclude "1password"
+setup_dir ./apps
 
 echo "--------------------------------------------------------------------------------"
 echo "Security"
 echo "--------------------------------------------------------------------------------"
-. ./apps/1password/setup.sh
+setup_dir ./security
 
 echo "--------------------------------------------------------------------------------"
 echo "Preferences"
@@ -175,7 +157,7 @@ scripts=(
 
 for script in "${scripts[@]}"; do
   echo "Configuring $script"
-  . ./system/settings/$script.sh
+  . ./settings/$script.sh
 done
 
 killall Finder  &> /dev/null

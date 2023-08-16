@@ -1,0 +1,6 @@
+tap "azure/bicep"
+tap "azure/functions"
+
+brew "azure-cli"
+brew "azure/bicep/bicep"
+brew "azure/functions/azure-functions-core-tools@4"
