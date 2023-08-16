@@ -1,5 +1,70 @@
 #!/usr/bin/env zsh
 
+set -Eeuo pipefail
+
+# define a function that will iterate over all the directories in a given path, and
+# execute the setup.sh script in each directory, while printing the name of the
+# directory being installed.
+#
+# Allow the user to exclude directories by passing in a second argument. It will be
+# used as follows
+#
+# install ./system
+#
+# Will install go through every child directory in system, and when setup.sh is found, it
+# will execute it.
+#
+# If the user wants to exclude a directory, they can pass in a --exclude argument
+# followed by a list of directories to exclude. For example:
+#
+# install ./system --exclude "settings" "homebrew"
+#
+# This will install everything in ./system except for ./system/settings and
+# ./system/homebrew
+#
+
+function setup_dir {
+  if [ -z "$1" ]; then
+    echo "No path given"
+    return 1
+  fi
+
+  if [ ! -d "$1" ]; then
+    echo "Path $1 does not exist"
+    return 1
+  fi
+
+  # check if there's an exclude argument
+  if [ -n "$2" ]; then
+    if [ "$2" == "--exclude" ]; then
+      shift
+      shift
+      exclude=("$@")
+    fi
+  fi
+
+  # iterate over all the directories in the given path
+  for dir in "$1"/*/; do
+    # get the name of the directory
+    dir_name=$(basename "$dir")
+
+    # check if the directory is in the exclude list
+    if [[ " ${exclude[@]} " =~ " ${dir_name} " ]]; then
+      echo "Skipping $dir_name"
+      continue
+    fi
+
+    # check if the directory has a setup.sh script
+    if [ -f "$dir/setup.sh" ]; then
+      echo "Installing $dir_name"
+      . "$dir/setup.sh"
+    fi
+  done
+
+  return 0
+
+}
+
 echo "Running SUDO"
 sudo -v
 
@@ -35,81 +100,50 @@ fi
 echo "--------------------------------------------------------------------------------"
 echo "Prerequisites"
 echo "--------------------------------------------------------------------------------"
-. ./development/xcode-cli/setup.sh
-. ./system/homebrew/setup.sh
+. ./prerequisites/xcode-cli/setup.sh
+. ./prerequisites/homebrew/setup.sh
+. ./prerequisites/git/setup.sh
 
 echo "--------------------------------------------------------------------------------"
 echo "Fonts"
 echo "--------------------------------------------------------------------------------"
-. ./fonts/setup.sh
+setup_dir ./fonts
 
 echo "--------------------------------------------------------------------------------"
 echo "Shells and Terminals"
 echo "--------------------------------------------------------------------------------"
-. ./shell/zsh/setup.sh
-. ./shell/bash/setup.sh
-. ./shell/powershell/setup.sh
+setup_dir ./shell
 
 echo "--------------------------------------------------------------------------------"
 echo "System Tools"
 echo "--------------------------------------------------------------------------------"
-. ./system/ssh/setup.sh
-
-echo "--------------------------------------------------------------------------------"
-echo "Utilities"
-echo "--------------------------------------------------------------------------------"
-. ./system/utils/setup.sh
+# install everything in system except for settings and homebrew
+setup_dir ./system --exclude "settings" "homebrew"
 
 echo "--------------------------------------------------------------------------------"
 echo "Languages"
 echo "--------------------------------------------------------------------------------"
-for lang in ./lang/*/; do
-  if [ -f "$lang/setup.sh" ]; then
-    name=$(basename $lang)
-    name="--- $name "
-    echo $name
-    . $lang/setup.sh
-  fi
-done
+setup_dir ./lang
 
 echo "--------------------------------------------------------------------------------"
 echo "Development Tools"
 echo "--------------------------------------------------------------------------------"
-. ./development/github/setup.sh
-. ./development/git/setup.sh
-. ./development/gitkraken/setup.sh
-. ./development/kaleidoscope/setup.sh
-. ./development/terraform/setup.sh
-. ./development/ldb-mi/setup.sh
-. ./development/docker/setup.sh
-. ./development/checkov/setup.sh
+setup_dir ./development
 
 echo "--------------------------------------------------------------------------------"
 echo "Editors"
 echo "--------------------------------------------------------------------------------"
-. ./apps/nano/setup.sh
-. ./development/vscode/setup.sh
-. ./development/jetbrains/setup.sh
+setup_dir ./editors
 
 echo "--------------------------------------------------------------------------------"
 echo "Applications"
 echo "--------------------------------------------------------------------------------"
-. ./apps/elgato/setup.sh
-. ./apps/hazel/setup.sh
-. ./apps/pandoc/setup.sh
-. ./apps/msoffice/setup.sh
-. ./apps/fusion-360/setup.sh
-. ./apps/logitech/setup.sh
-. ./apps/transmit/setup.sh
+setup_dir ./apps --exclude "1password"
 
 echo "--------------------------------------------------------------------------------"
 echo "Security"
 echo "--------------------------------------------------------------------------------"
-# installing 1Password last would allow us to configure 1password plugins for other
-# applications
 . ./apps/1password/setup.sh
-
-
 
 echo "--------------------------------------------------------------------------------"
 echo "Preferences"
