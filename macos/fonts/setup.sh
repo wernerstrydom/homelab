@@ -10,7 +10,7 @@ mkdir -p ~/.fonts
 if [ ! -d ~/.fonts/powerline ]; then
   echo "Installing Powerline Fonts"
   git clone https://github.com/powerline/fonts.git --depth=1 ~/.fonts/powerline
-  pushd ~/.fonts
+  pushd ~/.fonts/powerline
   sudo ./install.sh
   popd
 else
