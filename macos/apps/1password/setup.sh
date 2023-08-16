@@ -29,7 +29,13 @@ then
     echo "plugins.sh is already in ~/.zshrc"
 else
     echo "plugins.sh is not in ~/.zshrc"
-    echo "source ~/.config/op/plugins.sh" >> ~/.zshrc
+     cat <<EOF >> ~/.zshrc
+
+# 1password plugins
+if [ -f ~/.config/op/plugins.sh ]; then
+    source ~/.config/op/plugins.sh
+fi
+EOF
 fi
 
 # add 1password to ~/.ssh/config if it doesn't exist
