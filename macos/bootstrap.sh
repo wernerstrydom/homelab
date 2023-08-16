@@ -105,6 +105,34 @@ echo "--------------------------------------------------------------------------
 echo "--------------------------------------------------------------------------------"
 echo "Preferences"
 echo "--------------------------------------------------------------------------------"
-. ./system/settings/dock.sh
-. ./system/settings/terminal.sh
+
+scripts=(
+  appstore
+  battery
+  desktopservices
+  dock
+  finder
+  loginwindow
+  mail
+  menubar
+  networkbrowser
+  photos
+  preview
+  safari
+  screencapture
+  sound
+  system
+  terminal
+  textedit
+  time
+  timemachine
+  universalaccess
+)
+
+for script in "${scripts[@]}"; do
+  echo "--------------------------------------------------------------------------------"
+  echo "Running $script"
+  echo "--------------------------------------------------------------------------------"
+  . ./system/settings/$script.sh
+done
 
