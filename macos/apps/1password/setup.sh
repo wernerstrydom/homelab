@@ -22,7 +22,15 @@ if [ ! -f ~/.config/op/config ]; then
 fi
 touch ~/.config/op/plugins.sh
 chmod 600 ~/.config/op/plugins.sh
-echo "source ~/.config/op/plugins.sh" >> ~/.zshrc && source ~/.zshrc
+
+# check if there's already a line in .zshrc to source plugins.sh
+if grep -q "source ~/.config/op/plugins.sh" ~/.zshrc
+then
+    echo "plugins.sh is already in ~/.zshrc"
+else
+    echo "plugins.sh is not in ~/.zshrc"
+    echo "source ~/.config/op/plugins.sh" >> ~/.zshrc
+fi
 
 # add 1password to ~/.ssh/config if it doesn't exist
 if grep -q "1password" ~/.ssh/config
