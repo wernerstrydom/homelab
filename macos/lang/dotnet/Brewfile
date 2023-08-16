@@ -1,5 +1,4 @@
 brew "dotnet"
 brew "dotnet@6"
 brew "dotnet-sdk"
-brew "dotnet-sdk-6.0"
 
