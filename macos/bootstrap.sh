@@ -9,11 +9,11 @@ echo "--------------------------------------------------------------------------
 echo "Installing Rosetta"
 echo "--------------------------------------------------------------------------------"
 if [[ $(uname -m) == "arm64" ]]; then
-  if [[ ! -f "/Library/Apple/System/Library/LaunchDaemons/com.apple.oahd.plist" ]]; then
+  if /usr/bin/pgrep -q oahd; then
+    echo "Rosetta already installed"
+  else
     echo "Installing Rosetta"
     sudo softwareupdate --install-rosetta --agree-to-license
-  else
-    echo "Rosetta already installed"
   fi
 else
   echo "Not running on arm64, skipping Rosetta"
