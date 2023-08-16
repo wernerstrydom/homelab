@@ -67,7 +67,7 @@ for lang in ./lang/*/; do
   if [ -f "$lang/setup.sh" ]; then
     name=$(basename $lang)
     name="--- $name "
-    echo "${name//?/-}"
+    echo $name
     . $lang/setup.sh
   fi
 done
