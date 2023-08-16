@@ -6,8 +6,8 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 defaults write com.apple.finder QuitMenuItem -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -int 1
-defaults write com.apple.finder ShowMountedServersOnDesktop -int 1
+defaults write com.apple.finder ShowHardDrivesOnDesktop -int 0
+defaults write com.apple.finder ShowMountedServersOnDesktop -int 0
 defaults write com.apple.finder NewWindowTarget 'PfHm'
 defaults write com.apple.finder NewWindowTargetPath "'file://$HOME'"
 defaults write com.apple.finder WarnOnEmptyTrash -int 0
