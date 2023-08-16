@@ -65,6 +65,7 @@ echo "--------------------------------------------------------------------------
 . ./lang/ruby/setup.sh
 . ./lang/kotlin/setup.sh
 . ./lang/java/setup.sh
+. ./lang/dotnet/setup.sh
 
 echo "--------------------------------------------------------------------------------"
 echo "Development Tools"
