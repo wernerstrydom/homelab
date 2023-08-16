@@ -35,6 +35,7 @@ function setup_dir {
   fi
 
   # check if there's an exclude argument
+  exclude=()
   if [ -n "$2" ]; then
     if [ "$2" == "--exclude" ]; then
       shift
