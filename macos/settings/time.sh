@@ -8,5 +8,8 @@ sudo defaults write com.apple.menuextra.clock IsAnalog -bool false
 sudo defaults write com.apple.menuextra.clock FlashDateSeparators -bool true
 sudo defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm:ss"
 
-sudo systemsetup -setusingnetworktime on
-# sudo systemsetup -setnetworktimeserver time.apple.com
+STATUS=$(sudo systemsetup -getusingnetworktime | awk '{print $3}')
+if [ "$STATUS" != "On" ]; then
+  sudo systemsetup -setusingnetworktime on
+fi
+
