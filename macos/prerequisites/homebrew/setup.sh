@@ -44,5 +44,9 @@ fi
 
 eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 
+# /private/var/db/com.apple.xpc.launchd/config/user.plist
+# sudo launchctl config user path "$HOMEBREW_PREFIX/bin:$PATH"
+# sudo launchctl config system path "$HOMEBREW_PREFIX/bin:$PATH"
+
 
 
