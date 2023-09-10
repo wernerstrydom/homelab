@@ -7,7 +7,7 @@ brew bundle --file=$SCRIPT_DIR/Brewfile
 git config --global credential.helper osxkeychain
 git config --global init.defaultBranch main
 
-USERNAME=`id -F`
+USERNAME=$(id -F)
 EMAIL=$(defaults read MobileMeAccounts Accounts | grep AccountID | cut -d \" -f2)
 git config --global user.name "$USERNAME"
 git config --global user.email "$EMAIL"
@@ -24,9 +24,9 @@ fi
 # configure git template directory. If it doesn't exist, create it
 if [ -d ~/.git-template ]
 then
-    echo "~/.git-template already exists"
+    echo "$HOME/.git-template already exists"
 else
-    echo "~/.git-template does not exist"
+    echo "$HOME/.git-template does not exist"
     mkdir -p ~/.git-template/hooks
 fi
 
